@@ -1,0 +1,6 @@
+@GatitosAPI_HostAddress = http://localhost:5274
+
+GET {{GatitosAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
