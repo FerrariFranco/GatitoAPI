@@ -1,41 +1,54 @@
 ﻿using GatitosAPI.Models;
+using System.Collections.Generic;
 
-namespace GatitosAPI.Service;
-
-public class GatitoDataStore
+namespace GatitosAPI.Service
 {
- public List<Gatito>? Gatitos {get; set;}
+    public class GatitoDataStore
+    {
+        public List<Gatito>? Gatitos { get; set; }
 
- public static GatitoDataStore? Current {get;}
+        public static GatitoDataStore Current { get; } = new GatitoDataStore();
 
- private GatitoDataStore()
+        private GatitoDataStore()
         {
             Gatitos = new List<Gatito>();
+
+            Gatitos.Add(new Gatito
             {
-                new Gatito
+                Id = 1,
+                Nombre = "Jere",
+                Apellido = "Ferrari",
+                Habilidades = new List<Habilidad>
                 {
-                    Id = 1,
-                    Nombre = "Jere",
-                    Habilidades = new List<Habilidad>
-                    {
-                        new Habilidad { Id = 1, Nombre = "Dormir", Potencia = Habilidad.EPotencia.Moderado },
-                        new Habilidad { Id = 2, Nombre = "Comer", Potencia = Habilidad.EPotencia.Moderado }
-                    }
-                };
+                    new Habilidad { Id = 1, Nombre = "Dormir", Potencia = Habilidad.EPotencia.Moderado },
+                    new Habilidad { Id = 2, Nombre = "Comer", Potencia = Habilidad.EPotencia.Moderado }
+                }
+            });
 
-                new Gatito
+            Gatitos.Add(new Gatito
+            {
+                Id = 2,
+                Nombre = "Yuumi",
+                Apellido = "Carvani",
+                Habilidades = new List<Habilidad>
                 {
-                    Id = 2,
-                    Nombre = "Yuumi",
-                    Habilidades = new List<Habilidad>
-                    {
-                        new Habilidad { Id = 3, Nombre = "Engordar", Potencia = Habilidad.EPotencia.Extremo },
-                        new Habilidad { Id = 4, Nombre = "Arañar", Potencia = Habilidad.EPotencia.Intenso },
-                        new Habilidad { Id = 5, Nombre = "Charmear", Potencia = Habilidad.EPotencia.RePotente }
-                    }
-                };
-
-            }
-
+                    new Habilidad { Id = 3, Nombre = "Engordar", Potencia = Habilidad.EPotencia.Extremo },
+                    new Habilidad { Id = 4, Nombre = "Arañar", Potencia = Habilidad.EPotencia.Intenso },
+                    new Habilidad { Id = 5, Nombre = "Charmear", Potencia = Habilidad.EPotencia.RePotente }
+                }
+            });
+            Gatitos.Add(new Gatito
+            {
+                Id = 3,
+                Nombre = "Tisha",
+                Apellido = "Galati",
+                Habilidades = new List<Habilidad>
+                {
+                    new Habilidad { Id = 6, Nombre = "Enojarse", Potencia = Habilidad.EPotencia.RePotente },
+                    
+                    new Habilidad { Id = 7, Nombre = "Morder", Potencia = Habilidad.EPotencia.Extremo }
+                }
+            });
         }
+    }
 }
