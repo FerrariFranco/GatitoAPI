@@ -460,19 +460,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\marth\\.nuget\\packages\\": {}
+    "C:\\Users\\Win10\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\marth\\OneDrive\\Escritorio\\Programacion\\GatitoAPI\\GatitosAPI\\GatitosAPI.csproj",
+      "projectUniqueName": "D:\\repos\\GatitoAPI\\GatitosAPI\\GatitosAPI.csproj",
       "projectName": "GatitosAPI",
-      "projectPath": "C:\\Users\\marth\\OneDrive\\Escritorio\\Programacion\\GatitoAPI\\GatitosAPI\\GatitosAPI.csproj",
-      "packagesPath": "C:\\Users\\marth\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\marth\\OneDrive\\Escritorio\\Programacion\\GatitoAPI\\GatitosAPI\\obj\\",
+      "projectPath": "D:\\repos\\GatitoAPI\\GatitosAPI\\GatitosAPI.csproj",
+      "packagesPath": "C:\\Users\\Win10\\.nuget\\packages\\",
+      "outputPath": "D:\\repos\\GatitoAPI\\GatitosAPI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\marth\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Win10\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -492,6 +492,11 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -526,7 +531,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.201/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

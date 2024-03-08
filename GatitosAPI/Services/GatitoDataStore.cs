@@ -1,4 +1,5 @@
 ﻿using GatitosAPI.Models;
+using Microsoft.AspNetCore.Http.HttpResults;
 using System.Collections.Generic;
 
 namespace GatitosAPI.Service
@@ -50,5 +51,30 @@ namespace GatitosAPI.Service
                 }
             });
         }
+
+        public Gatito BuscarGatito(int gatitoId)
+        {
+            var gatito = Current.Gatitos.FirstOrDefault(z=> z.Id == gatitoId);
+            
+            return gatito;
+        
+        }
+
+
+        public Habilidad BuscarHabilidad(int habilidadId, Gatito gatito)
+        {
+            var habilidad = gatito.Habilidades?.FirstOrDefault(x=>x.Id == habilidadId);
+
+            return habilidad;
+        }
+
+        public Habilidad BuscarExistenciaHabilidad(int habilidadId, Gatito gatito, string habilidadNombre)
+        {
+            var habilidad = gatito.Habilidades?.FirstOrDefault(x=>x.Id != habilidadId && x.Nombre == habilidadNombre);
+
+            return habilidad;
+        }
+
+        
     }
 }

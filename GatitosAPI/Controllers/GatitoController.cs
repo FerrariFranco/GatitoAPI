@@ -1,4 +1,5 @@
-﻿using GatitosAPI.Models;
+﻿using GatitosAPI.Helpers;
+using GatitosAPI.Models;
 using GatitosAPI.Service;
 using Microsoft.AspNetCore.Mvc;
 
@@ -16,10 +17,10 @@ public class GatitoController : ControllerBase
     [HttpGet("{gatitoId}")]
     public ActionResult<Gatito> GetGatito(int gatitoId)
     {
-        var gatito = GatitoDataStore.Current.Gatitos.FirstOrDefault(z=> z.Id == gatitoId);
+        var gatito = GatitoDataStore.Current.BuscarGatito(gatitoId);
         if(gatito == null)
         {
-            return NotFound("El gatito solicitado no exister");
+            return NotFound(Mensajes.Gatito.NotFound);
 
         }
         else
@@ -49,10 +50,10 @@ public class GatitoController : ControllerBase
     [HttpPut("{gatitoId}")]
     public ActionResult<Gatito> PutGatito([FromRoute]int gatitoId, [FromBody]GatitoInsert gatitoInsert)
     {
-        var gatito = GatitoDataStore.Current.Gatitos.FirstOrDefault(z=> z.Id == gatitoId);
+        var gatito = GatitoDataStore.Current.BuscarGatito(gatitoId);
         if(gatito == null)
         {
-            return NotFound("El gatito solicitado no exister");
+            return NotFound(Mensajes.Gatito.NotFound);
 
         }
         gatito.Nombre = gatitoInsert.Nombre;
@@ -64,10 +65,10 @@ public class GatitoController : ControllerBase
     [HttpDelete("{gatitoId}")]
     public ActionResult<Gatito> DeleteGatito([FromRoute]int gatitoId)
     {
-        var gatito = GatitoDataStore.Current.Gatitos.FirstOrDefault(z=> z.Id == gatitoId);
+        var gatito = GatitoDataStore.Current.BuscarGatito(gatitoId);
         if(gatito == null)
         {
-            return NotFound("El gatito solicitado no exister");
+            return NotFound(Mensajes.Gatito.NotFound);
 
         }
         GatitoDataStore.Current.Gatitos.Remove(gatito);
